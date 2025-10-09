@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 import '../models/era.dart';
+import '../utils/audio_manager.dart';
 import 'quiz_screen.dart';
 
-class EraDetailScreen extends StatelessWidget {
+class EraDetailScreen extends StatefulWidget {
   final Era era;
   const EraDetailScreen({super.key, required this.era});
 
   @override
+  State<EraDetailScreen> createState() => _EraDetailScreenState();
+}
+
+class _EraDetailScreenState extends State<EraDetailScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // 🎵 Restart background music for this screen
+    AudioManager.playBackgroundMusic();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final era = widget.era;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(era.title),
@@ -16,12 +31,8 @@ class EraDetailScreen extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // 👉 Background based on era
-          Image.asset(
-            era.backgroundImage,
-            fit: BoxFit.cover,
-          ),
-          Container(color: Colors.black54), // overlay para readable text
+          Image.asset(era.backgroundImage, fit: BoxFit.cover),
+          Container(color: Colors.black54),
 
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -31,23 +42,19 @@ class EraDetailScreen extends StatelessWidget {
                 Text(
                   era.subtitle,
                   style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
                 ),
                 const SizedBox(height: 16),
                 const Text(
                   'Mga Tanong (Preview):',
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 const SizedBox(height: 12),
-
-                // 👉 List of questions
                 Expanded(
                   child: ListView.separated(
                     itemCount: era.questions.length,
@@ -64,17 +71,14 @@ class EraDetailScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Text(
-                            'Q${index + 1}', // 👉 Badge style
+                            'Q${index + 1}',
                             style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
-                        title: Text(
-                          q.prompt,
-                          style: const TextStyle(color: Colors.white),
-                        ),
+                        title: Text(q.prompt,
+                            style: const TextStyle(color: Colors.white)),
                       );
                     },
                   ),
@@ -91,7 +95,7 @@ class EraDetailScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => QuizScreen(era: era), // same background
+                          builder: (_) => QuizScreen(era: era),
                         ),
                       );
                     },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/era.dart';
+import '../utils/audio_manager.dart';
 
 class QuizScreen extends StatefulWidget {
   final Era era;
@@ -14,6 +15,13 @@ class _QuizScreenState extends State<QuizScreen> {
   int score = 0;
 
   @override
+  void initState() {
+    super.initState();
+    // 🎵 Restart background music when quiz starts
+    AudioManager.playBackgroundMusic();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final currentQuestion = widget.era.questions[currentIndex];
 
@@ -25,11 +33,7 @@ class _QuizScreenState extends State<QuizScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // 👉 Same background as the selected era
-          Image.asset(
-            widget.era.backgroundImage,
-            fit: BoxFit.cover,
-          ),
+          Image.asset(widget.era.backgroundImage, fit: BoxFit.cover),
           Container(color: Colors.black54),
 
           Padding(
@@ -37,7 +41,6 @@ class _QuizScreenState extends State<QuizScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // 👉 Question Badge
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -50,13 +53,13 @@ class _QuizScreenState extends State<QuizScreen> {
                     child: Text(
                       'Tanong ${currentIndex + 1}/${widget.era.questions.length}',
                       style: const TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
                 const SizedBox(height: 20),
-
-                // 👉 Question text
                 Text(
                   currentQuestion.prompt,
                   style: const TextStyle(
@@ -67,7 +70,6 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 const SizedBox(height: 30),
 
-                // 👉 Answer buttons
                 ...List.generate(currentQuestion.options.length, (i) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 6),
@@ -78,9 +80,13 @@ class _QuizScreenState extends State<QuizScreen> {
                             horizontal: 12, vertical: 14),
                       ),
                       onPressed: () {
-                        final correct =
-                            (i + 1) == currentQuestion.answer; // 1-based
-                        if (correct) score += 5; // you can adjust point system
+                        final correct = (i + 1) == currentQuestion.answer;
+                        if (correct) {
+                          score += 5;
+                          AudioManager.playCorrect(); // ✅ sound
+                        } else {
+                          AudioManager.playWrong(); // ❌ sound
+                        }
 
                         if (currentIndex < widget.era.questions.length - 1) {
                           setState(() => currentIndex++);
@@ -112,8 +118,8 @@ class _QuizScreenState extends State<QuizScreen> {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pop(context); // close dialog
-              Navigator.pop(context); // back to era detail
+              Navigator.pop(context);
+              Navigator.pop(context);
             },
             child: const Text('OK'),
           ),

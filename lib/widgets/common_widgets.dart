@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// 🔹 A reusable styled button
 class CustomButton extends StatelessWidget {
@@ -39,35 +40,70 @@ class CustomButton extends StatelessWidget {
 class InfoCard extends StatelessWidget {
   final String title;
   final String subtitle;
-  final IconData icon;
-  final VoidCallback? onTap;
+  final IconData? icon;
+  final Widget? leadingIcon; // ✅ this allows custom icon widget
+  final VoidCallback onTap;
+  final Color? backgroundColor;
+  final Color? textColor;
+  final double iconSize;
+  final Color? borderColor;
 
   const InfoCard({
     Key? key,
     required this.title,
     required this.subtitle,
-    required this.icon,
-    this.onTap,
+    this.icon,
+    this.leadingIcon,
+    required this.onTap,
+    this.backgroundColor,
+    this.textColor,
+    this.iconSize = 28,
+    this.borderColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-      elevation: 3,
+      color: backgroundColor ?? Colors.white,
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(
+          color: borderColor ?? Colors.black12,
+          width: 7.5,
+        ),
+      ),
       child: ListTile(
-        leading: Icon(icon, color: Theme.of(context).primaryColor),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        leading: leadingIcon ??
+            Icon(
+              icon,
+              size: iconSize,
+              color: textColor ?? Colors.black,
+            ),
         title: Text(
           title,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          style: TextStyle(
+            fontFamily: 'Merriweather',
+            fontWeight: FontWeight.bold,
+            color: textColor ?? Colors.black,
+          ),
         ),
-        subtitle: Text(subtitle),
-        trailing: const Icon(Icons.chevron_right),
+        subtitle: Text(
+          subtitle,
+          style: TextStyle(
+            fontFamily: 'Merriweather',
+            color: textColor?.withOpacity(0.7) ?? Colors.black87,
+          ),
+        ),
+        trailing: Icon(Icons.arrow_forward_ios, size: 16, color: textColor),
         onTap: onTap,
       ),
     );
   }
 }
+
+
 
 /// 🔹 A reusable question widget
 class QuestionCard extends StatelessWidget {
