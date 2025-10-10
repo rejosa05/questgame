@@ -1,16 +1,22 @@
+import 'package:flutter/material.dart';
+
 class Era {
   final String id;
   final String title;
   final String subtitle;
   final List<Question> questions;
   final String backgroundImage;
+  final Color color;
+  final IconData icon;
 
   Era({
     required this.id,
     required this.title,
     required this.subtitle,
     required this.questions,
-    required this.backgroundImage
+    required this.backgroundImage,
+    required this.color,
+    required this.icon
   });
 }
 

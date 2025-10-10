@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../utils/audio_manager.dart';
 import '../widgets/common_widgets.dart';
-import 'era_list_screen.dart';
+import 'eraListScreen.dart';
 import 'practice_game_screen.dart';
 import 'competition_placeholder.dart';
 import 'knowledge_card_screen.dart';
@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
               borderColor: Colors.lightGreen.shade900,
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => const PracticeGameScreen()),
+                MaterialPageRoute(builder: (_) => const EraListScreen()),
               ),
             ),
             InfoCard(
@@ -127,24 +127,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  void _showIntroDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('Panimula'),
-        content: const Text(
-          'Maligayang pagdating sa Lakbay Talino! Piliin ang yugto at simulan ang hamon.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Sige'),
-          ),
-        ],
       ),
     );
   }

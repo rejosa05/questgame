@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/era.dart';
 import '../utils/audio_manager.dart';
-import 'quiz_screen.dart';
+import 'quizScreen.dart';
 
 class EraDetailScreen extends StatefulWidget {
   final Era era;
@@ -33,7 +33,6 @@ class _EraDetailScreenState extends State<EraDetailScreen> {
         children: [
           Image.asset(era.backgroundImage, fit: BoxFit.cover),
           Container(color: Colors.black54),
-
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(

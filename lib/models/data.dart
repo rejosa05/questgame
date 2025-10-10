@@ -1,4 +1,6 @@
 import 'era.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // --- WORLD HISTORY SAMPLE ---
 final eraWWI = Era(
@@ -187,6 +189,8 @@ final eraWWI = Era(
       answer: 2,
     ),
   ],
+  color: Colors.redAccent,
+  icon: FontAwesomeIcons.shieldHalved,
 );
 
 final eraWWII = Era(
@@ -367,6 +371,8 @@ final eraWWII = Era(
     ),
 
   ],
+  color: Colors.lightGreen,
+  icon: FontAwesomeIcons.earthEurope,
 );
 
 final eraColdWar = Era(
@@ -547,6 +553,8 @@ final eraColdWar = Era(
     ),
 
   ],
+  color: Colors.lightBlueAccent,
+  icon: FontAwesomeIcons.snowflake,
 );
 // --- LIST OF ALL ERAS ---
 final allEras = [
