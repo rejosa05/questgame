@@ -9,8 +9,8 @@ class EraListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // 🎨 Unique colors per era
     final List<Color> boxColors = [
-      Colors.brown.shade700,
-      Colors.indigo.shade700,
+      Colors.red.shade300,
+      Colors.green.shade700,
       Colors.blue.shade700,
       Colors.deepPurple.shade600,
       Colors.orange.shade800,

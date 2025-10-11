@@ -15,6 +15,7 @@ dependencies:
   audioplayers: ^6.1.0
   font_awesome_flutter: ^10.7.0
   flutter_native_splash: ^2.4.6
+  confetti: ^0.7.0
 
 dev_dependencies:
   flutter_launcher_icons: ^0.14.4

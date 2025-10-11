@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
               borderColor: Colors.blue.shade300,
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => const PracticeGameScreen()),
+                MaterialPageRoute(builder: (_) => const EraListScreen()),
               ),
             ),
             InfoCard(
