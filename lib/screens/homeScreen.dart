@@ -6,6 +6,8 @@ import 'eraListScreen.dart';
 import 'practice_game_screen.dart';
 import 'competition_placeholder.dart';
 import 'knowledge_card_screen.dart';
+import 'lakbayinNatin.dart';
+import 'larongPagsasanay.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -74,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
               borderColor: Colors.lightGreen.shade900,
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => const EraListScreen()),
+                MaterialPageRoute(builder: (_) => const LakbayinNatin()),
               ),
             ),
             InfoCard(
@@ -90,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
               borderColor: Colors.deepOrange.shade300,
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => const PracticeGameScreen()),
+                MaterialPageRoute(builder: (_) => const LarongPagsasanay()),
               ),
             ),
             InfoCard(
