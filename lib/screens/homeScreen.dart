@@ -4,7 +4,6 @@ import '../utils/audio_manager.dart';
 import '../widgets/common_widgets.dart';
 import 'eraListScreen.dart';
 import 'practice_game_screen.dart';
-import 'competition_placeholder.dart';
 import 'knowledge_card_screen.dart';
 import 'lakbayinNatin.dart';
 import 'larongPagsasanay.dart';
