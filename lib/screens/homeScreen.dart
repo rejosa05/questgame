@@ -4,9 +4,10 @@ import '../utils/audio_manager.dart';
 import '../widgets/common_widgets.dart';
 import 'eraListScreen.dart';
 import 'practice_game_screen.dart';
-import 'knowledge_card_screen.dart';
+import 'karununganCard.dart';
 import 'lakbayinNatin.dart';
 import 'larongPagsasanay.dart';
+import 'panimulaScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -59,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               borderColor: Colors.orangeAccent.shade700,
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => const PracticeGameScreen()),
+                MaterialPageRoute(builder: (_) => const PanimulaScreen()),
               ),
             ),
             InfoCard(
@@ -123,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
               borderColor: Colors.grey.shade800,
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => const PracticeGameScreen()),
+                MaterialPageRoute(builder: (_) => const KarununganCard()),
               ),
             ),
           ],

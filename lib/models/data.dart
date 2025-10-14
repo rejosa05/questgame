@@ -444,110 +444,122 @@ final eraColdWar = Era(
     ),
     Question(
       prompt:
-      'Sino ang Punong Ministro ng Britain noong WWII?',
+      'Ano ang Cuban Missile Crisis?',
       type: QType.MultipleChoice,
       options: [
-        'A. Neville Chamberlain',
-        'B. Winston Churchill',
-        'C. Franklin Roosevelt',
-        'D. Charles de Gaulle'
+        'A. Pagsabog ng atomic bomb',
+        'B. Paglalagay ng misayl ng USSR sa Cuba',
+        'C. Digmaan sa Caribbean',
+        'D. Paglusob ng US sa Cuba'
       ],
       answer: 3,
     ),
     Question(
       prompt:
-      'Saan naganap ang D-Day invasion?',
+      'Sino ang Pangulo ng US sa kasagsagan ng Cuban Missile Crisis?',
       type: QType.MultipleChoice,
       options: [
-        'A. Normandy, France',
-        'B. Berlin, Germany',
-        'C. Rome, Italy',
-        'D. Tokyo, Japan'
-      ],
-      answer: 2,
-    ),
-    Question(
-      prompt:
-      'Ano ang codename ng proyektong lumikha ng atomic bomb?',
-      type: QType.MultipleChoice,
-      options: [
-        'A. Eagle Project',
-        'B. Manhattan Project',
-        'C. Apollo Mission',
-        'D. Axis Plan'
+        'A. Dwight Eisenhower',
+        'B. John F. Kennedy',
+        'C. Richard Nixon',
+        'D. Ronald Reagan'
       ],
       answer: 3,
     ),
     Question(
       prompt:
-      'Sino ang lider ng Soviet Union noong WWII?',
+      'Kailan itinayo ang Berlin Wall?',
+      type: QType.MultipleChoice,
+      options: [
+        'A. 1945',
+        'B. 1961',
+        'C. 1975',
+        'D. 1989'
+      ],
+      answer: 3,
+    ),
+    Question(
+      prompt:
+      'Sino ang lider ng USSR na nagpatupad ng Perestroika at Glasnost?',
       type: QType.MultipleChoice,
       options: [
         'A. Nikita Khrushchev',
-        'B. Joseph Stalin',
-        'C. Vladimir Lenin',
-        'D. Leon Trotsky'
+        'B. Leonid Brezhnev',
+        'C. Mikhail Gorbachev',
+        'D. Boris Yeltsin'
       ],
-      answer: 3,
+      answer: 4,
     ),
     // Dificult
     Question(
       prompt:
-      'Ano ang tawag sa kasunduang nilagdaan nina Hitler at Stalin bago ang WWII?',
+      'Ano ang tinatawag na “space race”?',
       type: QType.MultipleChoice,
       options: [
-        'A. Yalta Pact',
-        'B. Molotov–Ribbentrop Pact',
-        'C. Potsdam Agreement',
-        'D. Atlantic Charter'
-      ],
-      answer: 3,
-    ),
-    Question(
-      prompt:
-      'Ano ang pangunahing layunin ng Blitzkrieg?',
-      type: QType.MultipleChoice,
-      options: [
-        'A. Mabagal na paglusob',
-        'B. Mabilis na atake gamit ang eroplano, tangke, at sundalo',
-        'C. Pagtatanggol ng teritoryo',
-        'D. Diplomasya'
-      ],
-      answer: 3,
-    ),
-    Question(
-      prompt:
-      'Ano ang pangunahing dahilan ng pagbagsak ng Japan noong 1945?',
-      type: QType.MultipleChoice,
-      options: [
-        'A. Paglusob ng Russia',
-        'B. Paggamit ng Estados Unidos ng atomic bomb sa Hiroshima at Nagasaki',
-        'C. Gutom at krisis sa ekonomiya',
-        'D. Pagtutol ng Axis Powers'
-      ],
-      answer: 3,
-    ),
-    Question(
-      prompt:
-      'Sino ang kilalang heneral ng Allied Forces sa Europe?',
-      type: QType.MultipleChoice,
-      options: [
-        'A. Dwight D. Eisenhower',
-        'B. Douglas MacArthur',
-        'C. George Patton',
-        'D. Bernard Montgomery'
+        'A. Labanan sa kalawakan ng US at USSR',
+        'B. Pagtatayo ng mga base militar',
+        'C. Digmaan sa buwan',
+        'D. Pag-uunahan sa armas nukleyar'
       ],
       answer: 2,
     ),
     Question(
       prompt:
-      'Ano ang epekto ng WWII sa buong mundo?',
+      'Ano ang Domino Theory?',
       type: QType.MultipleChoice,
       options: [
-        'A. Pagbuo ng League of Nations',
-        'B. Pagkakatatag ng United Nations',
-        'C. Paglawak ng Ottoman Empire',
-        'D. Pagkakaisa ng Axis Powers'
+        'A. Paniniwalang kapag bumagsak ang isang bansa sa komunismo, susunod din ang iba',
+        'B. Estratehiya ng USSR sa Asia',
+        'C. Pagsabog ng mga misayl',
+        'D. Pagtutol sa kapitalismo'
+      ],
+      answer: 2,
+    ),
+    Question(
+      prompt:
+      'Sino ang kilalang lider ng Poland na lumaban sa komunismo?',
+      type: QType.MultipleChoice,
+      options: [
+        'A. Vaclav Havel',
+        'B. Lech Wałęsa',
+        'C. Mikhail Gorbachev',
+        'D. Fidel Castro'
+      ],
+      answer: 3,
+    ),
+    Question(
+      prompt:
+      'Ano ang resulta ng Korean War?',
+      type: QType.MultipleChoice,
+      options: [
+        'A. Pagkapanalo ng North Korea',
+        'B. Panalo ng South Korea',
+        'C. Nananatiling hati ang Korea sa Hilaga at Timog',
+        'D. Ganap na pagkakaisa'
+      ],
+      answer: 4,
+    ),
+    Question(
+      prompt:
+      'Kailan bumagsak ang Berlin Wall?',
+      type: QType.MultipleChoice,
+      options: [
+        'A. 1987',
+        'B. 1989',
+        'C. 1991',
+        'D. 1993'
+      ],
+      answer: 3,
+    ),
+    Question(
+      prompt:
+      'Ano ang hudyat ng pagtatapos ng Cold War?',
+      type: QType.MultipleChoice,
+      options: [
+        'A. Cuban Missile Crisis',
+        'B. Pagbagsak ng Berlin Wall at USSR',
+        'C. Korean War',
+        'D. Vietnam War'
       ],
       answer: 3,
     ),
